@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.model.mapper.RealtorMapper">
+
+		<select id="realtorselectAll" resultType="Realtor">
+	        select rno,rid,remail,raddress,rphone,rgrade,rname,rcontent,ceo,license
+	        from realtor
+        
+        </select>
+        
+		<select id="realtorInfo"  resultType="Realtor">
+			select rname,rcontent,rno, rid, remail, raddress, rphone ,ceo,license,rgrade
+			from realtor
+			where rno=#{rno} AND rid = #{rid}
+		</select>
+		
+		<select id="searchrPwd"  resultType="Realtor">
+		select rpwd
+		from realtor
+		where rid = #{rid} and remail = #{remail}
+		
+		</select>
+
+		<insert id="rregist" parameterType="Realtor">
+		insert into realtor (rid,rpwd, remail, raddress, rphone,rname,rcontent,license)
+		values (#{rid}, #{rpwd}, #{remail}, #{raddress}, #{rphone},#{rname}, #{rcontent},#{license})
+		
+		
+		</insert>
+		
+		<update id="rmodify" parameterType="Realtor">
+			update realtor
+			set rcontent = #{rcontent} , remail = #{remail}, raddress = #{raddress}, rphone = #{rphone} , ceo = #{ceo} , license = #{license}
+			where rno = #{rno} AND rid = #{rid}
+		
+		</update>
+
+		<delete id="rdelete" >
+			delete from realtor
+			where rid = #{rid}
+		</delete>
+</mapper>

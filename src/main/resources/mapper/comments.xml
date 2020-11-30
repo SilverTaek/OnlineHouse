@@ -1,0 +1,45 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.model.mapper.CommentMapper">
+
+	<!-- 게시글 전체 조회 -->
+	<select id="selectCBoard" resultType="com.ssafy.happyhouse.model.CommentDto">
+		select *
+		  from answer
+		where qno = #{qno}
+	</select>
+	
+	<!-- 게시글 상세 조회 -->
+	<select id="selectCBoardByNo" resultType="com.ssafy.happyhouse.model.CommentDto">
+		select *
+		  from answer
+		 where cno = #{cno}
+	</select>
+
+	<!-- 게시글 등록 -->
+	<insert id="insertCBoard" >
+		insert into answer(
+			qno, userid, title, content
+		) values (
+			#{qno}, #{userid}, #{title}, #{content}
+		)
+	</insert>
+	
+	<!-- 게시글 수정 -->
+	<update id="updateCBoard" >
+		update answer
+		   set content = #{content}, title = #{title}
+		 where cno = #{cno}
+	</update>
+
+	<!-- 게시글 삭제 -->
+	<delete id="deleteCBoard" >
+		delete 
+		  from answer
+		 where cno = #{cno}
+	</delete>
+
+</mapper>
+

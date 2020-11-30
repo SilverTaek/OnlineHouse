@@ -1,0 +1,96 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.model.mapper.HouseMapMapper">
+
+	<delete id="deletefav">
+		delete from favorite
+		where userid = #{userid} and location = #{location}
+	</delete>
+
+	<insert id="addfavList" >
+		insert into favorite (userid, location)
+		values (#{userid}, #{location})
+	</insert>
+	
+	<select id="getfavList" resultType="FavoriteDto">
+	  select userid, location 
+	  from favorite
+		where userid = #{userid}
+	</select>
+	
+	<select id="getTriageName" resultType="TriageRoomDto">
+	  select tname, address, gugun_name
+		from guguncode join sidocode left join triageroom using(sido_name, gugun_name)
+		where left(gugun_code,2) = left(sido_code,2) and left(gugun_code,5) = #{gugun};
+	</select>
+	
+	<select id="getTriageList" resultType="TriageRoomDto">
+	  select address, weekdaytime, sattime, suntime, phone, swabbing, gugun_name
+	  from triageroom
+		where tname = #{tname}
+	</select>
+	
+	<select id="getHospitalList" resultType="HospitalDto">
+	  select address, type, phone 
+	  from hospital
+		where hname = #{hname}
+	</select>
+	
+	<select id="getHospitalName" resultType="HospitalDto">
+	  select hname, address, gugun_name
+		from guguncode join sidocode left join hospital using(sido_name, gugun_name)
+		where left(gugun_code,2) = left(sido_code,2) and left(gugun_code,5) = #{gugun};
+	</select>
+	
+	<select id="getSido" resultType="SidoGugunCodeDto">
+		select left(sido_code,2) sido_code, sido_name 
+		from sidocode
+		order by sido_code
+	</select>
+	
+	<select id="getGugunInSido" resultType="SidoGugunCodeDto">
+		select left(gugun_code,5) gugun_code, gugun_name
+		from guguncode
+		where left(gugun_code,2) = #{sido}
+		order by gugun_code
+	</select>
+	
+	<select id="getDongInGugun" resultType="HouseInfoDto">
+		select distinct dong, code
+		from houseinfo
+		where code = #{gugun}
+		order by dong
+	</select>
+	
+	<select id="getAptInDong" resultType="HouseInfoDto">
+		select no,dong,AptName,code,jibun
+		from houseinfo
+		where dong = #{dong}
+		order by AptName
+	</select>
+	
+	<select id="getAptNameHash" resultType="HouseDealDto">
+		select dealAmount,dong,dealYear,dealMonth,dealDay,area,floor,jibun
+		from housedeal
+		where AptName = #{aptname} and dong = #{dong}
+		order by dealAmount
+	</select>
+	
+	<select id="getAptNameDetail" resultType="HouseDealDto">
+		select AptName,dealAmount,dong,dealYear,dealMonth,dealDay,area,floor,jibun
+		from housedeal
+		where AptName = #{aptname}
+		order by dealAmount
+	</select>
+	
+	<select id="getAptName" resultType="HouseDealDto">
+		select AptName, jibun, dong
+		from housedeal
+		where AptName like concat('%',#{aptname},'%')
+		group by AptName, jibun, dong;
+	</select>
+	
+	
+</mapper>

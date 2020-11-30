@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.ssafy.happyhouse.model.mapper.QnaMapper">
+
+	<!-- 게시글 전체 조회 -->
+	<select id="selectQBoard" resultType="com.ssafy.happyhouse.model.QnaDto">
+		select qno, qtitle, qwriter, qcontent, qregtime
+		  from qna_board 
+		 order by qno desc
+	</select>
+	
+	<!-- 게시글 상세 조회 -->
+	<select id="selectQBoardByNo" resultType="com.ssafy.happyhouse.model.QnaDto">
+		select qno, qtitle, qwriter, qcontent, qregtime
+		  from qna_board 
+		 where qno = #{qno}
+	</select>
+
+	<!-- 게시글 등록 -->
+	<insert id="insertQBoard" parameterType="com.ssafy.happyhouse.model.QnaDto">
+		insert into qna_board(
+			qtitle, qwriter, qcontent
+		) values (
+			#{qtitle}, #{qwriter}, #{qcontent}
+		)
+	</insert>
+	
+	<!-- 게시글 수정 -->
+	<update id="updateQBoard" parameterType="com.ssafy.happyhouse.model.QnaDto">
+		update qna_board 
+		   set qtitle = #{qtitle}, 
+		   	   qwriter = #{qwriter}, 
+		   	   qcontent = #{qcontent}
+		 where qno = #{qno}
+	</update>
+
+	<!-- 게시글 삭제 -->
+	<delete id="deleteQBoard" parameterType="int">
+		delete 
+		  from qna_board 
+		 where qno = #{qno}
+	</delete>
+
+</mapper>
+

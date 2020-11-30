@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" 
+	"http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.ssafy.happyhouse.model.mapper.StoreMapper">
+	<select id="getStoreList" resultType="StoreDto">
+	  select address
+	  from store
+		where sido_name=#{sido} and gugun_name=#{gugun} and dong=#{dong} and lname='음식'
+		group by address
+	</select>		
+	
+	<select id="getStoreDetail" resultType="StoreDto">
+	  select sname, mname, address, building, floor_no
+	  from store
+		where address=#{address} and lname='음식'
+		
+	</select>	
+</mapper>

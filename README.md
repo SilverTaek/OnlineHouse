@@ -7,12 +7,12 @@
 # 시스템 구성도
 
 # 화면 설계
- <img src="https://user-images.githubusercontent.com/43171179/101800819-0b207b80-3b51-11eb-9219-063c96aa8988.png" width:200px;>
- <img src="https://user-images.githubusercontent.com/43171179/101800826-0d82d580-3b51-11eb-98e0-3411418862d9.png" width:200px;>
- <img src="https://user-images.githubusercontent.com/43171179/101800830-0e1b6c00-3b51-11eb-8950-d22877a8f55b.png" width:200px;>
- <img src="https://user-images.githubusercontent.com/43171179/101800833-0eb40280-3b51-11eb-867d-3103e73c8b81.png" width:200px;>
- <img src="https://user-images.githubusercontent.com/43171179/101800837-0fe52f80-3b51-11eb-8d05-faf46c91be89.png" width:200px;>
-  <img src="https://user-images.githubusercontent.com/43171179/101800842-11165c80-3b51-11eb-9087-aebc7add36b2.png" width:200px;>
+ <img src="https://user-images.githubusercontent.com/43171179/101800819-0b207b80-3b51-11eb-9219-063c96aa8988.png">
+ <img src="https://user-images.githubusercontent.com/43171179/101800826-0d82d580-3b51-11eb-98e0-3411418862d9.png">
+ <img src="https://user-images.githubusercontent.com/43171179/101800830-0e1b6c00-3b51-11eb-8950-d22877a8f55b.png">
+ <img src="https://user-images.githubusercontent.com/43171179/101800833-0eb40280-3b51-11eb-867d-3103e73c8b81.png">
+ <img src="https://user-images.githubusercontent.com/43171179/101800837-0fe52f80-3b51-11eb-8d05-faf46c91be89.png">
+ <img src="https://user-images.githubusercontent.com/43171179/101800842-11165c80-3b51-11eb-9087-aebc7add36b2.png">
 # ER다이어그램
 
 # 클래스다이어그램

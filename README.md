@@ -25,3 +25,5 @@
 # 사용기술 및 환경
 Java, SpringBoot, Mybatis, Mysql, Vue.js
 
+# 시연 영상
+[시연][https://www.youtube.com/watch?v=0hKbi7oBJ8E]

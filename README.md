@@ -5,6 +5,7 @@
  
  
 # 시스템 구성도
+ ![image](https://user-images.githubusercontent.com/43171179/101801755-07d9bf80-3b52-11eb-8b8e-7cef0dfaf6db.png)
 
 # 화면 설계
  <img src="https://user-images.githubusercontent.com/43171179/101800819-0b207b80-3b51-11eb-9219-063c96aa8988.png">
@@ -13,9 +14,13 @@
  <img src="https://user-images.githubusercontent.com/43171179/101800833-0eb40280-3b51-11eb-867d-3103e73c8b81.png">
  <img src="https://user-images.githubusercontent.com/43171179/101800837-0fe52f80-3b51-11eb-8d05-faf46c91be89.png">
  <img src="https://user-images.githubusercontent.com/43171179/101800842-11165c80-3b51-11eb-9087-aebc7add36b2.png">
+ 
 # ER다이어그램
+ ![image](https://user-images.githubusercontent.com/43171179/101802099-6b63ed00-3b52-11eb-9bbf-25e290096b5f.png)
 
+ 
 # 클래스다이어그램
+![class diagram](https://user-images.githubusercontent.com/43171179/101802155-79197280-3b52-11eb-9c9f-44185d8d431d.jpg)
 
 # 사용기술 및 환경
 Java, SpringBoot, Mybatis, Mysql, Vue.js
